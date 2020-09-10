@@ -7,6 +7,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
                 <th>날짜</th>
@@ -15,7 +16,9 @@
             <tbody>
                 {% for post in posts %}
                 <tr>
-                    <th>{{post.title}}</th>
+                    <th>{{post.id}}</th>
+                    <th>
+                        <a href="/board_view?id={{post.id}}">{{post.title}} </a></th>
                     <th>{{post.editor}}</th>
                     <th>{{post.date}}</th>
                 </tr>

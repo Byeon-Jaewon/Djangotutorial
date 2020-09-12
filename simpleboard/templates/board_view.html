@@ -13,17 +13,13 @@
                     <td>제목</td>
                     <td>{{posts.title}}</td>
                     <td>작성일</td>
-                    <td >{{posts.date}}</td>
+                    <td >{{posts.date| date:"Y-m-d"}}</td>
                 </tr>
-                <tr>
-                    <td>작성자</td>
-                    <td>{{posts.editor}}</td>
-                </tr>
+
                 <tr>
                     <td>내용</td>
                     <td>{{posts.note}}</td>
                 </tr>
-
             </table>
             {% endfor %}
         </div>

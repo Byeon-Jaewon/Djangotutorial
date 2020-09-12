@@ -3,19 +3,20 @@
         <title> 대충 게시판에 글을 쓰는 페이지 </title>
     </head>
     <body>
-        <form action="/board_insert" id="frmBoard">
+        <form action="/board_insert">
             <table>
                 <tr>
                     <td>제목</td>
                     <td><input type="input" placeholder="제 목" name="title"></td>
                 </tr>
+
                 <tr>
                     <td>내용</td>
-                    <td cols="20"><input type="input" placeholder="내 용" name="note"></td>
+                    <td><textarea rows=20 name="note"></textarea></td>
                 </tr>
                 <tr align="center">
                     <td width="100%" colspan="2">
-                        <button class="btn btn-default" style="margin-right:10px;" onclick="javascript:document.getElementById('frmBoard').submit();">저장</button>
+                        <input class="btn btn-dark" type="submit" value="글쓰기">
                     </td>
                 </tr>
             </table>

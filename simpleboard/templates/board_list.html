@@ -4,13 +4,13 @@
         <title> 개쉬운 게시판</title>
     </head>
     <body>
+        <h1>게시판 목록입니당</h1>
         <table class="table">
             <thead>
             <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>날짜</th>
+                <th><h3>번호</h3></th>
+                <th><h3>제목</h3></th>
+                <th><h3>날짜</h3></th>
             </tr>
             </thead>
             <tbody>
@@ -19,8 +19,7 @@
                     <th>{{post.id}}</th>
                     <th>
                         <a href="/board_view?id={{post.id}}">{{post.title}} </a></th>
-                    <th>{{post.editor}}</th>
-                    <th>{{post.date}}</th>
+                    <th>{{ post.date | date:"Y-m-d" }}</th>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
+from django.db import models
+
 from .models import Post
 
 def board_list(request):
@@ -17,3 +19,12 @@ def board_view(request):
 
 def board_write(request):
     return render(request, "board_write.html")
+
+def board_insert(request):
+    post=Post()
+    post.title= request.GET['title']
+    post.note= request.GET['note']
+    post.date= timezone.datetime.now()
+    post.save()
+
+    return redirect('/')

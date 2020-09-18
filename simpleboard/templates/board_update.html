@@ -5,17 +5,16 @@
     <body>
         {% for posts in posts %}
 
-        <form action="update({{posts.id}})">
+        <form action="update" method="POST">
+            {% csrf_token %}
             <table>
-
                 <tr>
                     <td>제목</td>
                     <td><input type="input" value="{{posts.title}}" name="title"></td>
                 </tr>
-
                 <tr>
                     <td>내용</td>
-                    <td><textarea rows=20 value="{{posts.note}}" name="note"></textarea></td>
+                    <td><textarea rows=20 name="note">{{posts.note}}</textarea></td>
                 </tr>
                 <tr align="center">
                     <td width="100%" colspan="2">

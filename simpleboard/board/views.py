@@ -36,6 +36,7 @@ def board_update(request):
     return render(request, "board_update.html", {'posts' : posts})
 
 def update(request, id):
+    
     posts=Post.objects.filter(id=id)
 
     if request.method =="POST":
@@ -43,6 +44,11 @@ def update(request, id):
         posts.note=request.POST['note']
         posts.date=timezone.datetime.now()
         posts.save()
-        return redirect("/")
+        return redirect('/board_list')
     else:
-        return render(request, 'board_update.html')
+        return render(request, 'board_list.html')
+
+def board_delete(request):
+    id=request.GET['id']
+    posts=Post.objects.get(id=id).delete()
+    return redirect('/')

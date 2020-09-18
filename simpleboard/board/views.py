@@ -28,3 +28,21 @@ def board_insert(request):
     post.save()
 
     return redirect('/')
+
+def board_update(request):
+    id=request.GET['id']
+    posts=Post.objects.filter(id=id)
+
+    return render(request, "board_update.html", {'posts' : posts})
+
+def update(request, id):
+    posts=Post.objects.filter(id=id)
+
+    if request.method =="POST":
+        posts.title=request.POST['title']
+        posts.note=request.POST['note']
+        posts.date=timezone.datetime.now()
+        posts.save()
+        return redirect("/")
+    else:
+        return render(request, 'board_update.html')

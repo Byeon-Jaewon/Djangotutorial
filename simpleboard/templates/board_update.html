@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> 대충 게시판에 글을 수정하는 페이지 </title>
+    </head>
+    <body>
+        {% for posts in posts %}
+
+        <form action="update({{posts.id}})">
+            <table>
+
+                <tr>
+                    <td>제목</td>
+                    <td><input type="input" value="{{posts.title}}" name="title"></td>
+                </tr>
+
+                <tr>
+                    <td>내용</td>
+                    <td><textarea rows=20 value="{{posts.note}}" name="note"></textarea></td>
+                </tr>
+                <tr align="center">
+                    <td width="100%" colspan="2">
+                        <input class="btn btn-dark" type="submit" value="수정하기">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        {% endfor %}
+
+    </body>
+</html>

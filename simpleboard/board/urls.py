@@ -7,6 +7,5 @@ urlpatterns = [
     path('board_view', views.board_view, name="board_view"),
     path('board_insert',views.board_insert, name="board_insert"),
     path('board_update',views.board_update, name="board_update"),
-    path('update',views.update, name="update"),
     path('board_delete',views.board_delete, name="board_delete"),
 ]

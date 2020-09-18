@@ -3,9 +3,8 @@
         <title> 대충 게시판에 글을 수정하는 페이지 </title>
     </head>
     <body>
-        {% for posts in posts %}
 
-        <form action="update" method="POST">
+        <form method="POST">
             {% csrf_token %}
             <table>
                 <tr>
@@ -24,7 +23,6 @@
 
             </table>
         </form>
-        {% endfor %}
 
     </body>
 </html>
